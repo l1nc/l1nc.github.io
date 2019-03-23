@@ -13,16 +13,16 @@
        margin:auto;
        border:1px solid gray;
        font-size:20px;
-   }
+    }
 
     td{
        border:1px solid gray;
        padding:5px;
-   }
+    }
 
-   li{
+    li{
        display: block;
-   }
+    }
 
     li a{ 
         display:block;
@@ -30,12 +30,12 @@
 
     .time{
         text-align:center;
-   }
+    }
     .table-head{
        color:white;
        background-color:seagreen;
        font-weight:bold;
-   }
+    }
 
     .alert{
         background-color:pink;
@@ -43,16 +43,15 @@
     
     .content{
         margin:40px;
-
         font-size:20px;
     }
 
     .dropdown {
         position: relative;
         display: inline-block;
-      }
+    }
       
-      .dropdown-content {
+    .dropdown-content {
         display: none;
         position: absolute;
         background-color: #f9f9f9;
@@ -60,21 +59,84 @@
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         padding: 12px 16px;
         z-index: 1;
-      }
+    }
       
-      .dropdown:hover .dropdown-content {
+    .dropdown:hover .dropdown-content {
         display: block;
+    }
+
+    .startButton {
+        border-radius: 4px;
+        background-color: rgb(0, 206, 0);
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
       }
-      </style>
       
-     
+      .challenge {
+        border-radius: 4px;
+        background-color: rgb(27, 91, 230);
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+      
+
+    .button01 {
+        border-radius: 4px;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 200px;
+        transition: all 0.5s;
+        cursor: pointer;
+        border: 2px;
+        margin: 20px;
+        position: relative;
+        background-color:red;
+    }
 
 
+    #question{
+        font-size: 30px;
+        text-align: center;
+        font-weight:bold;
+        display:inline-block;
+        color: white;
+    }
+
+    div.standard{
+        margin-top: 10px;
+    }
+    
+    .standard li{
+        display:inline-block;
+    }
 
 
+    #clock{
+        font-size: 30px;
+        margin: 0 2.5%;
+        color: white;
+        padding:20px;
+        width: 50%;
+        display: inline-block;
+    }
 
-
-
-
-
-
+    p{
+        font-size:30px;
+        color:white;
+    }

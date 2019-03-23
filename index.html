@@ -1,121 +1,114 @@
-
 <!DOCTYPE html>
 <html>
 <meta charset="UTF-8">
 
 <head>
     <title> Hack-a-DOM </title>
-
     <link rel="stylesheet" href="shared.css" />
+    <script src="zz.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
 
 </head>
-
-
-<body>
+<embed src="level1Music.mp3" autostart="true" loop="true" height=0 width=0>
+<body background="./images/background.jpg">
 
     <div class="dropdown">
-            <span>Mouse over me</span>
+        <span>Mouse over me</span>
         <div class="dropdown-content">
 
-                
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="categoriesStandard.html">Standard</a></li>
+                <li><a href="categoriesArcade.html">Arcade</a></li>
+
             </ul>
+
         </div>
-    </div> 
+    </div>
+
+    <div class="standard">
+        <button class="startButton" id="sumbit" onclick="submit()">START</button>
+        <p id="result"></p>
+
+        <ul>
+            <li>
+                <div class="container01">
+                    <div id="question">
+                        Prepare yourself! Let's begin.
+                    </div>
+                </div>
+            </li>
+            
+            <li>
+                <div class="container02">
+                    <div id="clock">
+
+                    </div>
+                </div>
+            </li>
 
 
-    <table id="people">
-        <tr>
-            <th>Name</th>
-            <th>Contact</th>
-            <th>Destination</th>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td> </td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
+        </ul>
+
+        <div class="answers" id="answers">
+
+            <ul>
+                <li>
+                    <button class="button01" id="a1" onClick="score(this.id)"></button>
+                </li>
+
+                <li>
+                    <button class="button01" id="a2" onClick="score(this.id)"></button>
+                </li>
+
+                <li>
+                    <button class="button01" id="a3" onClick="score(this.id)"></button>
+                </li>
+
+                <li>
+                    <button class="button01" id="a4" onClick="score(this.id)"></button>
+                </li>
+            </ul>
+
+        </div>
 
 
+        <button class="challenge" id="moving" onclick="moving()">Challenge</button>
+        
 
+        <script>
 
+            // need to set the position of buttons into fixed or relative;
+            function moving() {
+                animateDiv('#a1');
+                animateDiv('#a2');
+                animateDiv('#a3');
+                animateDiv('#a4');
+                ;
 
-    <script> </script>
+                function makeNewPosition() {
+
+                    // Get viewport dimensions (remove the dimension of the div)
+                    var h = $(window).height() - 50;
+                    var w = $(window).width() - 50;
+
+                    var nh = Math.floor(Math.random() * h);
+                    var nw = Math.floor(Math.random() * w);
+
+                    return [nh, nw];
+
+                }
+
+                function animateDiv(myclass) {
+                    var newq = makeNewPosition();
+                    $(myclass).animate({ top: newq[0], left: newq[1] }, 1000, function () {
+                        animateDiv(myclass);
+                    });
+
+                };
+            }
+
+        </script>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
