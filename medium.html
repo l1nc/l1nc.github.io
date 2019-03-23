@@ -5,7 +5,7 @@
 <head>
     <title> Hack-a-DOM </title>
     <link rel="stylesheet" href="shared.css" />
-    <script src="zz.js"></script>
+    <script src="zzMedium.js"></script>
     <script src="jquery-3.3.1.min.js"></script>
     <link rel="icon" href="./images/thinkingIcon.png">
 
@@ -13,21 +13,22 @@
 <embed src="./sounds/level1Music.mp3" autostart="true" loop="true" height=0 width=0>
 <body background="./images/background.jpg">
 
-    <div class="dropdown">
-            <span color="white">Difficulty</span>
+   
+
+    <div class="standard">
+         <div class="dropdown">
+            <span color="white">Categories</span>
         <div class="dropdown-content">
 
             <ul>
                 <li><a href="index.html">Easy</a></li>
-                <li><a href="medium.html">Medium</a></li>
-                <li><a href="hard.html">Hard</a></li>
+                <li><a href="medium.html">Animals</a></li>
+                <li><a href="hard.html">Computers</a></li>
 
             </ul>
 
         </div>
     </div>
-
-    <div class="standard">
         <button class="startButton" id="sumbit" onclick="submit()">START</button>
         <button class="startButton" id="sumbit" onclick="refresh()">RESET</button>
         <p id="result"></p>
@@ -91,8 +92,8 @@
                 function makeNewPosition() {
 
                     // Get viewport dimensions (remove the dimension of the div)
-                    var h = $(window).height() - 50;
-                    var w = $(window).width() - 50;
+                    var h = $('ul').height() + 200;
+                    var w = $('ul').width() + 200;
 
                     var nh = Math.floor(Math.random() * h);
                     var nw = Math.floor(Math.random() * w);
@@ -103,7 +104,7 @@
 
                 function animateDiv(myclass) {
                     var newq = makeNewPosition();
-                    $(myclass).animate({ top: newq[0], left: newq[1] }, 1000, function () {
+                    $(myclass).animate({ bottom: newq[0], left: newq[1] }, 500, function () {
                         animateDiv(myclass);
                     });
 
